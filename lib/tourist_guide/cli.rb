@@ -78,13 +78,13 @@ end
 
   def create_directions(name)
     scraping = TouristGuide::Scraping.new
-    dir_attr = scraping.scrape_index_page(name)
+    dir_attr = scraping.page_scraping(name)
     TouristGuide::Tour.create_from_collection(dir_attr)
   end
 
   def display_directions
     TouristGuide::Tour.all.each do |direction|
-      puts "#{direction.num}. #{direction.name}-based in: #{direction.address}"
+      puts "Name: #{direction.name}.    Address: #{direction.address}.   Description: #{direction.description}."
       end
   end
 
