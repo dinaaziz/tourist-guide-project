@@ -73,7 +73,7 @@ end
 
   def run(direction)
     create_directions(direction)
-    display_places
+    display_directions
   end
 
   def create_directions(name)
@@ -84,7 +84,7 @@ end
 
   def display_directions
     TouristGuide::Tour.all.each do |direction|
-      puts "#{direction.num}. #{direction.name}-based in: #{direction.address}"   
+      puts "#{direction.num}. #{direction.name}-based in: #{direction.address}"
       end
   end
 
