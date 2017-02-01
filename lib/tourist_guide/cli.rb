@@ -1,19 +1,19 @@
 class TouristGuide::Cli
-
   def call
-    puts "                                                        *****"
-    puts "                                          *****     *****     *****     *****"
-    puts "                              *****     Welcome to the tourism's Erbil guide     ******"
-    puts "                                          *****     *****     *****     *****"
-    puts "                                              *****     *****     *****"
-    puts "                                                   *****     *****"
-    puts "                                                        *****"
+    puts "                                                         ✰✰✰✰✰"
+    puts "                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
+    puts "                              ✰✰✰✰✰     WELCOME TO THE TOURIST'S ERBIL GUIDE     ✰✰✰✰✰"
+    puts "                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
+    puts "                                            ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
+    puts "                                                   ✰✰✰✰✰     ✰✰✰✰✰"
+    # puts "                                                         ✰✰✰✰✰"
       puts ""
-      puts "choose your direction:"
+      puts "choose your destination:"
       puts "----------------------------------------------------------------------------------------------------------------------"
       puts "1. Hotels   ♡ ♡ ♡ ♡ ♡   2. Restaurants   ♡ ♡ ♡ ♡ ♡   3. Cafeterias   ♡ ♡ ♡ ♡ ♡   4. Parks   ♡ ♡ ♡ ♡ ♡   5. Malls"
       puts ""
       puts "                   ♡ ♡ ♡ ♡ ♡   6. Back to the main menu    ♡ ♡ ♡ ♡ ♡   7. Exit    ♡ ♡ ♡ ♡ ♡   "
+
       # puts "2. Restaurants"
       # puts ""
       # puts "3. Cafeterias"
@@ -49,7 +49,7 @@ class TouristGuide::Cli
     elsif num == "3"
       puts "ERBIL'S CAFETERIES LIST:"
       puts ""
-      run("Cafeterias")
+      run("coffee%20shops")
       user_insert
     elsif num == "4"
       puts "ERBIL'S PARKS LIST:"
@@ -68,6 +68,8 @@ class TouristGuide::Cli
         user_insert
     elsif num == "7"
       puts "THANK YOU! HAVE A NICE TIME!"
+    else
+      puts "NOT valid, please insert 1-7 according to your need!!!"
     end
 end
 
