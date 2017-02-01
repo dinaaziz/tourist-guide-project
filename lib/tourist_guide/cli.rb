@@ -2,18 +2,23 @@ class TouristGuide::Cli
   def call
     puts "                                                         ✰✰✰✰✰"
     puts "                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
-    puts "                              ✰✰✰✰✰     WELCOME TO THE TOURIST'S ERBIL GUIDE     ✰✰✰✰✰"
+    puts "                              ✰✰✰✰✰     WELCOME TO THE TOURIST'S ERBIL GUIDE version #{TouristGuide::VERSION}    ✰✰✰✰✰"
     puts "                                      ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
     puts "                                            ✰✰✰✰✰     ✰✰✰✰✰     ✰✰✰✰✰"
     puts "                                                   ✰✰✰✰✰     ✰✰✰✰✰"
     # puts "                                                         ✰✰✰✰✰"
-      puts ""
-      puts "choose your destination:"
-      puts "----------------------------------------------------------------------------------------------------------------------"
-      puts "1. Hotels   ♡ ♡ ♡ ♡ ♡   2. Restaurants   ♡ ♡ ♡ ♡ ♡   3. Cafeterias   ♡ ♡ ♡ ♡ ♡   4. Parks   ♡ ♡ ♡ ♡ ♡   5. Malls"
-      puts ""
-      puts "                   ♡ ♡ ♡ ♡ ♡   6. Back to the main menu    ♡ ♡ ♡ ♡ ♡   7. Exit    ♡ ♡ ♡ ♡ ♡   "
+list
+user_insert
+end
 
+def list
+  puts ""
+  puts "choose your destination:"
+  puts "----------------------------------------------------------------------------------------------------------------------"
+  puts "1. Hotels   ♡ ♡ ♡ ♡ ♡   2. Restaurants   ♡ ♡ ♡ ♡ ♡   3. Cafeterias   ♡ ♡ ♡ ♡ ♡   4. Parks   ♡ ♡ ♡ ♡ ♡   5. Malls"
+  puts ""
+  puts "                   ♡ ♡ ♡ ♡ ♡   6. Back to the main menu    ♡ ♡ ♡ ♡ ♡   7. Exit    ♡ ♡ ♡ ♡ ♡   "
+end
       # puts "2. Restaurants"
       # puts ""
       # puts "3. Cafeterias"
@@ -25,10 +30,6 @@ class TouristGuide::Cli
       # puts "6. Back to the main menu"
       # puts ""
       # puts "7. Exit"
-
-      user_insert
-  end
-
   def user_insert
     input = nil
     input = gets.strip
@@ -40,36 +41,38 @@ class TouristGuide::Cli
       puts "ERBIL'S HOTELS LIST:"
       puts ""
       run("Hotels")
+      list
       user_insert
     elsif num == "2"
       puts "ERBIL'S RESTAURANTS LIST:"
       puts ""
       run("Restaurants")
+      list
       user_insert
     elsif num == "3"
       puts "ERBIL'S CAFETERIES LIST:"
       puts ""
       run("coffee%20shops")
+      list
       user_insert
     elsif num == "4"
       puts "ERBIL'S PARKS LIST:"
       puts ""
       run("Parks")
+      list
       user_insert
     elsif num == "5"
       puts "ERBIL'S MALLS LIST:"
       puts ""
       run("Malls")
+      list
       user_insert
     elsif   num == "6"
       call
-    elsif num.to_i > 7 && num.to_i < 0
-      puts "please, insert valid input"
-        user_insert
     elsif num == "7"
       puts "THANK YOU! HAVE A NICE TIME!"
     else
-      puts "NOT valid, please insert 1-7 according to your need!!!"
+      puts "NOT valid, please insert the right number!!!"
     end
 end
 
