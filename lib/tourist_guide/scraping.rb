@@ -4,7 +4,7 @@ class TouristGuide::Scraping
     direction_name = direction_name.downcase
    html = open("https://iq.brate.com/en/search?q=#{direction_name}&region=8&sort=2&page=1")
     scraped_page = Nokogiri::HTML(html)
-    array = scraped_page.css("div.single-search-result")
+    array = scraped_page.css("div.single-search-result") # selector
     array.each do |category|
       # binding.pry
       # category.css("div.b-main-center").each do |element|     #site

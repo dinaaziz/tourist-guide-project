@@ -73,6 +73,8 @@ end
       puts "THANK YOU! HAVE A NICE TIME!"
     else
       puts "NOT valid, please insert the right number!!!"
+      list
+      user_insert # recursion
     end
 end
 
@@ -89,8 +91,11 @@ end
 
   def display_directions
     TouristGuide::Tour.all.each do |direction|
-      puts "Name: #{direction.name}.    Address: #{direction.address}.   Description: #{direction.description}."
+      puts "Name: #{direction.name.ljust(40," ")}    Address: #{direction.address.ljust(20," ")}   Description: #{direction.description.ljust(10," ")}"
       end
   end
 
 end
+
+# Where it's defined (whether it has self.)
+# What it is called upon -- If a method is called upon an instance, it is an instance method. If it is called upon a class, it is a class method.

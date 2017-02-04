@@ -1,9 +1,10 @@
 class TouristGuide::Tour
   attr_accessor :name, :address, :description
   @@all =[]
+
   def initialize(attr_hash)
     attr_hash.each do |attribute, v|
-      self.send("#{attribute}=",v)
+      self.send("#{attribute}=",v) # meta-programming
     end
     @@all << self
   end
